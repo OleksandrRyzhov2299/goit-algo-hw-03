@@ -9,13 +9,18 @@ import random
 
 
 def get_numbers_ticket(min, max, quantity):
-    numbers_1 = random.sample(range(min, max), quantity)
-    return numbers_1
+    try:
+        numbers_1 = random.sample(range(min, max), quantity)
+        return numbers_1
+    except ValueError:
+        print(
+            f"\nError message:\n{quantity} not a valid value for the range {min} - {max}\n"
+        )
 
 
-# lottery_numbers_1 = get_numbers_ticket(1, 50, 6)
-# print("Ваші лотерейні числа:", lottery_numbers_1)
-# lottery_numbers_2 = get_numbers_ticket(100, 137, 5)
-# print("Ваші лотерейні числа:", lottery_numbers_2)
-# lottery_numbers_3 = get_numbers_ticket(200, 300, 3)
-# print("Ваші лотерейні числа:", lottery_numbers_3)
+lottery_numbers_1 = get_numbers_ticket(1, 50, 6)
+print("Ваші лотерейні числа:", lottery_numbers_1)
+lottery_numbers_2 = get_numbers_ticket(100, 137, 5)
+print("Ваші лотерейні числа:", lottery_numbers_2)
+lottery_numbers_3 = get_numbers_ticket(200, 300, 300)
+print("Ваші лотерейні числа:", lottery_numbers_3)
